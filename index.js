@@ -97,38 +97,51 @@
 // };
 
 
-// /**
-//  * 
-//  * @param {number} number 
-//  * @returns {string}
-//  */
-// const userValue = function(number){
-//     const input = prompt();
-//     if (input){
-//         return odd;
-//     }
-//     return even;
-// }
+домашея робота 07.01
+// 1) написати функцію, яка повертає слово 'odd' або 'even', в залежності від прийнятого аргументу(число).
+// Значення для перевірки функції вводить користувач.
 
-// const getResult = function (argument1, argument2){
-// if()
-// }
-
-
-const number1 = 45;
-const number2 = 24;
 /**
- *
- * @param {number} number1
- * @param {number} number2
- * @returns {boolean}
+ * 
+ * @param {number} number 
+ * @returns {string}
  */
-const isMultiplicity = function (number1, number2) {
-  return number1 % number2 === 0;
-};
-
-if (Number.isInteger(number1) && Number.isInteger(number1)) {
-  console.log(isMultiplicity(number1, number2));
-} else {
-  console.log("number must be integer");
+const userValue = function(number){
+    const input = prompt();
+    if (input){
+        return odd;
+    }
+    return even;
 }
+
+// 2)написати функцію, яка приймає два аргументи і, якщо аргументи одного типу, то повертає той, який має більше значення (якщо значення рівні - повертаємо null), інакше(якщо різного типу) теж повертає null.
+
+/**
+ * 
+ * @param {number} argument1 
+ * @param {number} argument2 
+ * @returns {null}
+ */
+const getResult = function (argument1, argument2){
+return argument1 > argument2 || argument2 > argument1;
+}
+return !argument1 > argument2 || argument2 > argument1;
+
+// /*
+//  *
+//  * @param {number} number1
+//  * @param {number} number2
+//  * @returns {number}
+//  */
+// const getResult = function (number1, number2) {
+//   if (number1 % 2 === 0, number2 % 2 === 0) {
+//     return number1 + number2;
+//   }
+//   if (number1 % 2 && number2 % 2) {
+//     return number1 * number2;
+//   }
+//   if (number1 % 2) {
+//     return number1;
+//   }
+//   return number2;
+// };
