@@ -96,36 +96,40 @@
 //   return number2;
 // };
 
-
-домашея робота 07.01
+// домашня робота 07.01
 // 1) написати функцію, яка повертає слово 'odd' або 'even', в залежності від прийнятого аргументу(число).
 // Значення для перевірки функції вводить користувач.
 
 /**
- * 
- * @param {number} number 
+ *
+ * @param {number} number
  * @returns {string}
  */
-const userValue = function(number){
-    const input = prompt();
-    if (input){
-        return odd;
-    }
-    return even;
-}
+const userValue = function (number) {
+  const input = prompt();
+  if (input) {
+    return odd;
+  }
+  return even;
+};
 
 // 2)написати функцію, яка приймає два аргументи і, якщо аргументи одного типу, то повертає той, який має більше значення (якщо значення рівні - повертаємо null), інакше(якщо різного типу) теж повертає null.
 
 /**
- * 
- * @param {number} argument1 
- * @param {number} argument2 
+ *
+ * @param {number} argument1
+ * @param {number} argument2
  * @returns {null}
  */
-const getResult = function (argument1, argument2){
-return argument1 > argument2 || argument2 > argument1;
+const getResult = function (argument1, argument2) {
+  if (typeof argument1 === typeof argument2) {
+    return argument1 > argument2 || argument2 > argument1;
+  }
+};
+if ((argument1 = argument2)) {
+  return null;
 }
-return !argument1 > argument2 || argument2 > argument1;
+if (!typeof argument1 === typeof argument2) return null;
 
 // /*
 //  *
