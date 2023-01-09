@@ -102,10 +102,10 @@
 
 /**
  *
- * @param {number} number
+ * @param {number} userValue
  * @returns {string}
  */
-const userValue = function (number) {
+const userValue = function (userValue) {
   const input = prompt();
   if (input) {
     return odd;
@@ -117,19 +117,21 @@ const userValue = function (number) {
 
 /**
  *
- * @param {number} argument1
- * @param {number} argument2
- * @returns {null}
+ * @param {any} argument1
+ * @param {any} argument2
+ * @returns {any || null}
  */
 const getResult = function (argument1, argument2) {
   if (typeof argument1 === typeof argument2) {
-    return argument1 > argument2 || argument2 > argument1;
+    if (argument1 > argument2) {
+      return argument1;
+    }
+    if (argument1 === argument2) {
+      return null;
+    }
   }
-};
-if ((argument1 = argument2)) {
   return null;
-}
-if (!typeof argument1 === typeof argument2) return null;
+};
 
 // /*
 //  *
