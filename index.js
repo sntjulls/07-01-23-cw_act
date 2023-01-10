@@ -105,13 +105,14 @@
  * @param {number} userValue
  * @returns {string}
  */
-const userValue = function (userValue) {
-  const input = prompt();
-  if (input) {
-    return odd;
+const input = prompt();
+const userValue = function (value) {
+  if (value % 2 === 0) {
+    return 'even';
   }
-  return even;
+  return 'odd';
 };
+console.log(userValue(input));
 
 // 2)написати функцію, яка приймає два аргументи і, якщо аргументи одного типу, то повертає той, який має більше значення (якщо значення рівні - повертаємо null), інакше(якщо різного типу) теж повертає null.
 
@@ -132,22 +133,29 @@ const getResult = function (argument1, argument2) {
   }
   return null;
 };
+console.log(getResult('4', '9'));
 
-// /*
-//  *
-//  * @param {number} number1
-//  * @param {number} number2
-//  * @returns {number}
-//  */
-// const getResult = function (number1, number2) {
-//   if (number1 % 2 === 0, number2 % 2 === 0) {
-//     return number1 + number2;
-//   }
-//   if (number1 % 2 && number2 % 2) {
-//     return number1 * number2;
-//   }
-//   if (number1 % 2) {
-//     return number1;
-//   }
-//   return number2;
-// };
+// classwork 09.01.23
+
+// const result2 = number1 >= number2 ? number1 : number2;
+
+// /
+
+// const number = 30;
+// // дільники 5 3 2 1
+// if (number % 5 === 0) {
+//   console.log("multiple 5");
+// } else if (number % 3 === 0) {
+//   console.log("multiple 3");
+// } else if (number % 2 === 0) {
+//   console.log("multiple 2");
+// } else if (number % 1 === 0) {
+//   console.log("multiple 1");
+// }
+
+const userInput = prompt('Choose')
+
+switch
+
+
+
