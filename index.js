@@ -460,6 +460,19 @@
 
 // ********************* АКТУАЛ
 
+function checkUserValue(userInput){
+  if (userInput >= 15 &&  userInput <= 35 && userInput % 6 === 0){
+    return true;
+  }
+}
+
+
+// for (let i = 15; i <= 35; i++) {
+//   if (i % 6 === 0) {
+//     console.log(i);
+//   }
+// }
+
 // let amount_try = 0;
 // while (true) {
 //   //перевіряти рахівник
@@ -476,9 +489,30 @@
 //   amount_try++;
 // }
 
-// const userInputNumber = prompt("Enter number");
-// const MAX_TRY = 3;
-// const amount_try = 0;
+function checkUserValue() {
+  const MAX_TRY = 3;
+  let amount_try = 0;
+  while (amount_try < MAX_TRY) {
+    amount_try++;
+    const userInputNumber = prompt("Enter number");
+    const correctNumber = Number(userInputNumber);
+    if (correctNumber >= 15 && correctNumber <= 35 && correctNumber % 6 === 0) {
+      return true;
+    }
+    if (
+      userInputNumber === "" ||
+      userInputNumber === null ||
+      Number.isNaN(Number(correctNumber))
+    ) {
+      console.log("try again");
+      break;
+    }
+    if (amount_try === MAX_TRY) {
+      return false;
+    }
+  }
+}
+
 // while (true) {
 //   if (amount_try++ >= MAX_TRY) {
 //     console.log("used all attempts");
@@ -487,7 +521,7 @@
 //   if (
 //     userInputNumber === "" ||
 //     userInputNumber === null ||
-//     Number.isNaN(Number(userInputNumber))
+//     Number.isNaN(Number(correctNumber))
 //   ) {
 //     console.log("try again");
 //     break;
@@ -508,12 +542,6 @@
 
 // *********************
 // const MAX_TRY = 3;
-
-// for (let i = 15; i <= 35; i++) {
-//   if (i % 6 === 0) {
-//     console.log(i);
-//   }
-// }
 
 // for (let i = 15; i <= 35; i++) {
 //   if (i % 6 === 0) {
@@ -728,55 +756,55 @@
 // addWater(value) //налий води
 // makeTea(value)  //відлий воду
 // turnOn()  //кип'яти
-/**
- *
- * @param {string} brand
- * @param {value} maxVolume
- * @param {value} minVolume
- */
-function Cattle(brand, maxVolume, minVolume) {
-  this.brand = brand;
-  this.maxVolume = maxVolume;
-  this.minVolume = minVolume;
-  this.currentVolume = 0;
-  this.isOn = false;
+// /**
+//  *
+//  * @param {string} brand
+//  * @param {value} maxVolume
+//  * @param {value} minVolume
+//  */
+// function Cattle(brand, maxVolume, minVolume) {
+//   this.brand = brand;
+//   this.maxVolume = maxVolume;
+//   this.minVolume = minVolume;
+//   this.currentVolume = 0;
+//   this.isOn = false;
 
-  this.turnOn = function () {
-    if (
-      this.currentVolume > this.minVolume &&
-      this.currentVolume < this.maxVolume
-    ) {
-      return (this.isOn = true);
-    }
-  };
-  this.addWater = function (value) {
-    if (this.currentVolume + value >= maxVolume) {
-      this.currentVolume = maxVolume;
-    } else {
-      this.currentVolume += value;
-    }
-    return this.currentVolume;
-  };
-  this.makeTea = function (value) {
-    if (this.currentVolume - value <= 0) {
-      this.currentVolume = 0;
-    } else {
-      this.currentVolume -= value;
-    }
-    return this.currentVolume;
-  };
-}
-const appliance = new Cattle("bosch", 2000, 500);
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.makeTea(100));
-console.log(appliance.makeTea(100));
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.turnOn());
+//   this.turnOn = function () {
+//     if (
+//       this.currentVolume > this.minVolume &&
+//       this.currentVolume < this.maxVolume
+//     ) {
+//       return (this.isOn = true);
+//     }
+//   };
+//   this.addWater = function (value) {
+//     if (this.currentVolume + value >= maxVolume) {
+//       this.currentVolume = maxVolume;
+//     } else {
+//       this.currentVolume += value;
+//     }
+//     return this.currentVolume;
+//   };
+//   this.makeTea = function (value) {
+//     if (this.currentVolume - value <= 0) {
+//       this.currentVolume = 0;
+//     } else {
+//       this.currentVolume -= value;
+//     }
+//     return this.currentVolume;
+//   };
+// }
+// const appliance = new Cattle("bosch", 2000, 500);
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.makeTea(100));
+// console.log(appliance.makeTea(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.turnOn());
 
 // *********
 // this.turnOn = function (value = 0) {
@@ -921,6 +949,238 @@ console.log(appliance.turnOn());
 
 //   return table;
 // }
+
+// ***********************************
+
+// 12.01.23 повтор
+
+// function showNumberOfRange(number, MIN_VALUE, MAX_VALUE)
+// for(let i=max; i>min; i--){
+//   if(i % number === 0){
+//     console.log(i)
+//   }
+// }
+
+// console.log(showNumberOfRange(10));
+// console.log(showNumberOfRange(30));
+// console.log(showNumberOfRange(7));
+
+// ***********************************
+
+// /**
+//  *
+//  * @param {number} num1
+//  * @param {number} num2
+//  * @param {string} operator
+//  */
+// function checkMath(num1, num2, operator) {
+//   const example = num1 + operator + num2 + "=";
+
+//   let result;
+//   switch (operator) {
+//     case "+":
+//       result = num1 + num2;
+//       break;
+//     case "-":
+//       result = num1 - num2;
+//       break;
+//     case "*":
+//       result = num1 * num2;
+//       break;
+//     case "/":
+//       result = num1 / num2;
+//       break;
+//     default:
+//       alert("not found operator");
+//       return;
+//   }
+//   while (true) {
+//     const userAnswer = prompt(example);
+//     if (userAnswer === "" || userAnswer === null) continue;
+//     if (result === Number(userAnswer)) return;
+//   }
+// }
+
+// checkMath(5, 2, "/");
+
+// const user = {
+//   firstName: "Brad",
+//   lastName: "Pitt",
+//   age: 59,
+//   isMale: true,
+// };
+
+// const user2 = {
+//   firstName: "Tom",
+//   lastName: "Soyer",
+//   age: 9,
+//   isMale: true,
+// };
+
+// function isAdult(object, ADULT_AGE = 18) {
+//   return object.age >= ADULT_AGE;
+// }
+
+// function sayHiUser(object) {
+//   return `${isAdult(object) ? "Hello" : "Hi"},${object.firstName}!`;
+// }
+
+// console.log(sayHiUser(user));
+// console.log(sayHiUser(user2));
+
+// ************ додати в тг
+
+// let n1 = 1;
+// const n2 = 1;
+
+// const res = n1;
+// console.log(res);
+// n1 = 15;
+// console.log(res);
+
+// const obj1 = {
+//   prop: 1,
+// };
+
+// const obj2 = {
+//   prop2: 1,
+// };
+
+// const test = obj1;
+// const newObj = test;
+// console.log(test);
+// obj1.prop = 15;
+// console.log(test);
+// console.log(newObj);
+// newObj.newProp = 'qwerty';
+
+// ***********************************
+
+// const product = {
+//   name: "dress",
+//   favoritColor: "teal",
+//   "favorit color": "pink",
+//   size: "S",
+//   10: 55,
+// };
+
+// const keyName = 10;
+
+// console.log(product[keyName]); //product 'favorit color'
+
+// ***********************************
+
+// const table = {
+//   "2 * 2=": 4,
+//   "2 * 3=": 6,
+// };
+
+// function createTableMultiple() {
+//   const table = {};
+//   for (let num1 = 2; num1 <= 9; num1++) {
+//     for (let num2 = 1; num2 <= 10; num2++) {
+//       table[${num1} * ${num2} =] = num1 * num2;
+//     }
+//   }
+//   return table;
+// }
+
+// console.log(createTableMultiple())
+
+// ***********************************
+
+// function resolveExample(str, obj) {
+//   return obj[str];
+// }
+
+// function createTableMultiple(limit = 2) {
+//   const table = {};
+//   for (let num1 = 2; num1 <= limit; num1++) {
+//     for (let num2 = 1; num2 <= 10; num2++) {
+//       table[`${num1} * ${num2} =`] = num1 * num2;
+//     }
+//   }
+//   return table;
+// }
+// const multTable = createTableMultiple(10);
+
+// console.log(createTableMultiple());
+
+// console.log("5 * 6 = ", resolveExample("5 * 6 = ", multTable));
+
+// ***********************************
+
+// Cтворіть функцію конструктор Продукт з властивостями:
+// назва(рядок), ціна(число), кількість(число - залишок на складі)
+
+// Cтворіть функцію конструктор прототипу Продукту з функціоналом:
+// showInfo() - повертає рядок з усіма данними
+// setSaleToPrice(value=0) - встановлює знижку і повертає нову ціну
+// buyAmountProduct(amountValue) - повертає загальну вартість покупки, якщо є достатня кількість, якщо не має повертаєте - null
+
+// Не забути поєднати Продукт і його прототип!
+
+// ***********************************
+/** дз 13.01.22
+ *
+ * @param {string} name
+ * @param {number} price
+ * @param {number} quantity
+ */
+
+function ProductPrototype() {
+  this.showInfo = function () {
+    return;
+  };
+  this.setSaleToPrice = function (value = 0) {};
+  this.buyAmountProduct = function (amountValue) {
+    if (amountValue <= 0) {
+      return false;
+    }
+    if (amountValue <= this.quantity) {
+      return amountValue;
+    }
+    return null;
+  };
+}
+
+function Product(name, price, quantity) {
+  this.name = name;
+  this.price = price;
+  this.quantity = quantity;
+}
+
+Product.prototype = new ProductPrototype();
+
+// console.log(showInfo)
+
+// const product1 = new Product();
+
+// function showInfo(){
+
+// }
+// function setSaleToPrice (value = 0){
+
+// };
+// function buyAmountProduct (amountValue){
+
+// };
+
+// showInfo = function(){
+
+// }
+// setSaleToPrice = function (value = 0){
+
+// };
+// buyAmountProduct = function (amountValue){
+
+// };
+// console.log(product1)
+// console.log(setSaleToPrice);
+
+// showInfo();
+// setSaleToPrice(value = 0);
+// buyAmountProduct(amountValue);
 
 // ***********************************
 
