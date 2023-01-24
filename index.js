@@ -24,6 +24,46 @@
 // console.log(userAge);
 // console.log(isAdult(22));
 
+// const userInput = prompt("Choose month season");
+
+// if (userInput === 12 && userInput === 1 && userInput === 2) {
+//   console.log("winter");
+// } else if (userInput === 3 && userInput === 4 && userInput === 5) {
+//   console.log("spring");
+// } else if (userInput === 6 && userInput === 7 && userInput === 8) {
+//   console.log("summer");
+// } else if (userInput === 9 && userInput === 10 && userInput === 11) {
+//   console.log("fall");
+// } else {
+//   console.log("error");
+// }
+
+// switch (userInput) {
+//   case "12":
+//   case "1":
+//   case "2":
+//     console.log("winter");
+//     break;
+//   case "3":
+//   case "4":
+//   case "5":
+//     console.log("spring");
+//     break;
+//   case "6":
+//   case "7":
+//   case "8":
+//     console.log("summer");
+//     break;
+//   case "9":
+//   case "10":
+//   case "11":
+//     console.log("fall");
+//     break;
+//   default:
+//     console.log("error");
+//     break;
+// }
+
 // 2 практична 07.01
 // /**
 //  *
@@ -458,14 +498,120 @@
 // зробити двома способами через while і for
 // * це повинна бути функція(можливо і не одна)
 
-// ********************* АКТУАЛ
+// ********************* АКТУАЛ1
+// /**
+//  *
+//  * @param {number} userInputNumber
+//  * @returns {string}
+//  */
+// function askUser(userInputNumber) {
+//   if (
+//     userInputNumber >= 15 &&
+//     userInputNumber <= 30 &&
+//     userInputNumber % 6 === 0
+//   ) {
+//     console.log("congratulations, you entered correct numbers");
+//   }
+// }
 
-function checkUserValue(userInput){
-  if (userInput >= 15 &&  userInput <= 35 && userInput % 6 === 0){
-    return true;
-  }
-}
+// const MAX_TRY = 3;
+// let i = 0;
+// while (i < MAX_TRY) {
+//   i++;
+//   const userInputNumber = prompt("Enter number");
+//   if (askUser(userInputNumber) === true) {
+//     console.log("congratulations, you entered correct numbers");
+//     break;
+//   }
+//   if (
+//     userInputNumber === "" ||
+//     userInputNumber === null ||
+//     Number.isNaN(userInputNumber)
+//   ) {
+//     console.log("try again");
+//     break;
+//   }
+//   if (i === MAX_TRY) {
+//     console.log("used all attempts");
+//   }
+// }
 
+// function checkUserNumber(userInputNumber)
+// const MAX_TRY = 3;
+// let i = 0;
+// while (i < MAX_TRY) {
+//   const userInputNumber = prompt("Enter number");
+// }
+// if (
+//   userInputNumber >= 15 &&
+//   userInputNumber <= 30 &&
+//   userInputNumber % 6 === 0
+// ) {
+//   return true;
+// }
+// return false;
+
+// /**
+//  *
+//  * @param {number} userInputNumber
+//  * @returns {string}
+//  */
+// function askUser(userInputNumber) {
+//   if (
+//     userInputNumber >= 15 &&
+//     userInputNumber <= 30 &&
+//     userInputNumber % 6 === 0
+//   ) {
+//     return true;
+//   }
+// }
+// for (let i = 0; i < 3; i++) {
+//   const userInputNumber = prompt("Enter number");
+//   if (askUser(userInputNumber) === true) {
+//     break;
+//   }
+// }
+
+// ********************* АКТУАЛ2
+
+// ********************* АКТУАЛмоє!!!!!!!!!!!!!!!
+//   /**
+//    *
+//    * @param {number} userInputNumber
+//    * @returns {boolean|string}
+//    */
+
+//   function checkUserValue(userInputNumber) {
+//     if (
+//       userInputNumber >= 15 &&
+//       userInputNumber <= 35 &&
+//       userInputNumber % 6 === 0
+//     ) {
+//       return true;
+//     }
+//   }
+// );
+// const MAX_TRY = 3;
+// let i = 0;
+// while (i < MAX_TRY) {
+//   const userInputNumber = prompt("Enter number");
+// }
+// if (
+//   userInputNumber >= 15 &&
+//   userInputNumber <= 30 &&
+//   userInputNumber % 6 === 0
+// ) {
+//   return true;
+// }
+// return false;
+
+// for (let i = 0; i < MAX_TRY; i++) {
+//   const userAnswer = prompt("Enter number");
+//   if (correctNumber(userAnswer)) {
+//     return console.log("congratulations, you entered the correct number");
+//   }
+//   console.log("try again");
+// }
 
 // for (let i = 15; i <= 35; i++) {
 //   if (i % 6 === 0) {
@@ -489,29 +635,47 @@ function checkUserValue(userInput){
 //   amount_try++;
 // }
 
-function checkUserValue() {
-  const MAX_TRY = 3;
-  let amount_try = 0;
-  while (amount_try < MAX_TRY) {
-    amount_try++;
-    const userInputNumber = prompt("Enter number");
-    const correctNumber = Number(userInputNumber);
-    if (correctNumber >= 15 && correctNumber <= 35 && correctNumber % 6 === 0) {
-      return true;
-    }
-    if (
-      userInputNumber === "" ||
-      userInputNumber === null ||
-      Number.isNaN(Number(correctNumber))
-    ) {
-      console.log("try again");
-      break;
-    }
-    if (amount_try === MAX_TRY) {
-      return false;
-    }
-  }
-}
+// нове:
+
+// function checkUserValue() {
+//   const MAX_TRY = 3;
+//   let amount_try = 0;
+//   while (amount_try < MAX_TRY) {
+//     amount_try++;
+//     const userInputNumber = prompt("Enter number");
+//     const correctNumber = Number(userInputNumber);
+//     if (correctNumber >= 15 && correctNumber <= 35 && correctNumber % 6 === 0) {
+//       return true;
+//     }
+//     if (
+//       userInputNumber === "" ||
+//       userInputNumber === null ||
+//       Number.isNaN(Number(correctNumber))
+//     ) {
+//       console.log("try again");
+//       break;
+//     }
+//     if (amount_try === MAX_TRY) {
+//       return false;
+//     }
+//   }
+// }
+
+// for (let i = 0; i < MAX_TRY; i++) {
+//   const userInputNumber = prompt("Enter number");
+//   if (correctNumber(userAnswer)) {
+//     return console.log("congratulations, you entered the correct number");
+//   }
+//   console.log("try again");
+// }
+
+// for (let i = 0; i < MAX_TRY; i++) {
+//   const userAnswer = prompt("Enter number");
+//   if (correctNumber(userAnswer)) {
+//     return console.log("congratulations, you entered the correct number");
+//   }
+//   console.log("try again");
+// }
 
 // while (true) {
 //   if (amount_try++ >= MAX_TRY) {
@@ -756,55 +920,67 @@ function checkUserValue() {
 // addWater(value) //налий води
 // makeTea(value)  //відлий воду
 // turnOn()  //кип'яти
-// /**
-//  *
-//  * @param {string} brand
-//  * @param {value} maxVolume
-//  * @param {value} minVolume
-//  */
-// function Cattle(brand, maxVolume, minVolume) {
-//   this.brand = brand;
-//   this.maxVolume = maxVolume;
-//   this.minVolume = minVolume;
-//   this.currentVolume = 0;
-//   this.isOn = false;
+/**
+ *
+ * @param {string} brand
+ * @param {value} maxVolume
+ * @param {value} minVolume
+ */
+function Cattle(brand, maxVolume, minVolume) {
+  this.brand = brand;
+  this.maxVolume = maxVolume;
+  this.minVolume = minVolume;
+  this.currentVolume = 0;
+  this.isOn = false;
 
-//   this.turnOn = function () {
-//     if (
-//       this.currentVolume > this.minVolume &&
-//       this.currentVolume < this.maxVolume
-//     ) {
-//       return (this.isOn = true);
-//     }
-//   };
-//   this.addWater = function (value) {
-//     if (this.currentVolume + value >= maxVolume) {
-//       this.currentVolume = maxVolume;
-//     } else {
-//       this.currentVolume += value;
-//     }
-//     return this.currentVolume;
-//   };
-//   this.makeTea = function (value) {
-//     if (this.currentVolume - value <= 0) {
-//       this.currentVolume = 0;
-//     } else {
-//       this.currentVolume -= value;
-//     }
-//     return this.currentVolume;
-//   };
-// }
-// const appliance = new Cattle("bosch", 2000, 500);
-// console.log(appliance.addWater(100));
-// console.log(appliance.addWater(100));
-// console.log(appliance.addWater(100));
-// console.log(appliance.makeTea(100));
-// console.log(appliance.makeTea(100));
-// console.log(appliance.addWater(100));
-// console.log(appliance.addWater(100));
-// console.log(appliance.addWater(100));
-// console.log(appliance.addWater(100));
-// console.log(appliance.turnOn());
+  //   this.addWater = function (value) {
+  //     if (this.currentVolume + value >= maxVolume) {
+  //       this.currentVolume = maxVolume;
+  //     } else {
+  //       this.currentVolume += value;
+  //     }
+  //     return this.currentVolume;
+  //   };
+  this.addWater = function (value) {
+    if (value <= 0) {
+      return false;
+    }
+
+    this.currentVolume += value;
+    if (this.currentVolume >= this.maxVolume) {
+      return (this.currentVolume = this.maxVolume);
+    }
+    return this.currentVolume;
+  };
+  this.makeTea = function (value) {
+    if (this.currentVolume <= 0) {
+      this.currentVolume = 0;
+    }
+    return this.currentVolume;
+  };
+}
+
+this.turnOn = function () {
+  if (
+    this.currentVolume > this.minVolume ||
+    this.currentVolume < this.maxVolume
+  ) {
+    return (this.isOn = true);
+  }
+  return (this.isOn = false);
+};
+
+const appliance = new Cattle("bosch", 2000, 500);
+console.log(appliance.addWater(100));
+console.log(appliance.addWater(100));
+console.log(appliance.addWater(100));
+console.log(appliance.makeTea(100));
+console.log(appliance.makeTea(100));
+console.log(appliance.addWater(100));
+console.log(appliance.addWater(100));
+console.log(appliance.addWater(100));
+console.log(appliance.addWater(100));
+console.log(appliance.turnOn());
 
 // *********
 // this.turnOn = function (value = 0) {
@@ -1121,92 +1297,212 @@ function checkUserValue() {
 // Не забути поєднати Продукт і його прототип!
 
 // ***********************************
-/** дз 13.01.22
- *
- * @param {string} name
- * @param {number} price
- * @param {number} quantity
- */
+// /** дз 13.01.22
+// //  *
+// //  * @param {string} name
+// //  * @param {number} price
+// //  * @param {number} quantity
+// //  */
 
-function ProductPrototype() {
-  this.showInfo = function () {
-    return;
-  };
-  this.setSaleToPrice = function (value = 0) {};
-  this.buyAmountProduct = function (amountValue) {
-    if (amountValue <= 0) {
-      return false;
-    }
-    if (amountValue <= this.quantity) {
-      return amountValue;
-    }
-    return null;
-  };
-}
-
-function Product(name, price, quantity) {
-  this.name = name;
-  this.price = price;
-  this.quantity = quantity;
-}
-
-Product.prototype = new ProductPrototype();
-
-// console.log(showInfo)
-
-// const product1 = new Product();
-
-// function showInfo(){
-
+// function ProductPrototype() {
+//   this.showInfo = function () {
+//     return;
+//   };
+//   this.setSaleToPrice = function (value = 0) {};
+//   this.buyAmountProduct = function (amountValue) {
+//     if (amountValue <= 0) {
+//       return false;
+//     }
+//     if (amountValue <= this.quantity) {
+//       return amountValue;
+//     }
+//     return null;
+//   };
 // }
-// function setSaleToPrice (value = 0){
 
-// };
-// function buyAmountProduct (amountValue){
-
-// };
-
-// showInfo = function(){
-
+// function Product(name, price, quantity) {
+//   this.name = name;
+//   this.price = price;
+//   this.quantity = quantity;
 // }
-// setSaleToPrice = function (value = 0){
 
-// };
-// buyAmountProduct = function (amountValue){
+// Product.prototype = new ProductPrototype();
 
-// };
-// console.log(product1)
-// console.log(setSaleToPrice);
+// // console.log(showInfo)
 
-// showInfo();
-// setSaleToPrice(value = 0);
-// buyAmountProduct(amountValue);
+// // const product1 = new Product();
 
-// ***********************************
+// // function showInfo(){
 
-// 13.01.23 classwork
+// // }
+// // function setSaleToPrice (value = 0){
 
-// object with logic (functions)
-// const MyArrayPrototype = {};
-// MyArrayPrototype.push = function (value) {
-//   this[this.length] = value;
-//   return ++this.length;
-// };
+// // };
+// // function buyAmountProduct (amountValue){
 
-// // constructor with data
-// function MyArray() {
-//   this.length = 0;
+// // };
+
+// // showInfo = function(){
+
+// // }
+// // setSaleToPrice = function (value = 0){
+
+// // };
+// // buyAmountProduct = function (amountValue){
+
+// // };
+// // console.log(product1)
+// // console.log(setSaleToPrice);
+
+// // showInfo();
+// // setSaleToPrice(value = 0);
+// // buyAmountProduct(amountValue);
+
+// // ***********************************
+
+// // 13.01.23 classwork
+
+// // object with logic (functions)
+// // const MyArrayPrototype = {};
+// // MyArrayPrototype.push = function (value) {
+// //   this[this.length] = value;
+// //   return ++this.length;
+// // };
+
+// // // constructor with data
+// // function MyArray() {
+// //   this.length = 0;
+// // }
+// // MyArray.prototype = MyArrayPrototype;
+
+// // const myArrayNumbers = new MyArray();
+// // const myArrayNumbers2 = new MyArray();
+// // myArrayNumbers.push(777);
+// // console.log(myArrayNumbers);
+// // console.log(myArrayNumbers.push === myArrayNumbers.push);
+
+// // const arrayNumbers = [];
+// // const arrayNumbers2 = new Array();
+// // arrayNumbers.push(555);
+// // console.log(arrayNumbers);
+// // console.log(arrayNumbers.push === arrayNumbers2.push)
+
+// // ***********************************
+
+// // 17.01.23 classwork
+
+// const arr1 = [1, 2, 3, 4, 9, 6, 7];
+
+// const result1 = arr1.reverse();
+// console.log(arr1);
+// console.log(result1);
+
+// const arr2 = [1, 2, 3, 4, 5, 6, 7];
+// const result2 = arr2.splice(3);
+
+// /*
+// not modify:
+// indexOf, lastIndexOf, includes
+// reduce
+// concat
+// slice
+// find, findIndex, findLast, findLastIndex
+// modify:
+// push, pop
+// unshift, shift
+// splice
+// reverse
+// */
+
+// // const arr1 = [1, 2, 3, 4, 9, 6, 7];
+
+// //const result1 = arr1.slice(3);
+// // const result1 = arr1.findIndex(function (currentElement) {
+// //   return currentElement > 4;
+// // });
+// // const result1 = arr1.reverse();
+// // console.log(arr1);
+// // console.log(result1);
+
+// // const arr2 = [1, 2, 3, 4, 5, 6, 7];
+// // const result2 = arr2.splice(3);
+// // console.log(arr2)
+// // console.log(result2);
+
+// //написати функцію, яка приймає два пареметри: мінімум і максимум діапазону
+// //повертає масив, значеннями якого будуть усі числа з діапазону, включаючи мінімум і максимум
+// //третій необов'яковий аргумент функції приймає шаг для визначення елементів
+// //за замовчуванням шаг = 1
+// /**
+//  *
+//  * @param {number} min
+//  * @param {number} max
+//  * @param {number} step default value = 1
+//  * @returns {[number]} [number]
+//  */
+// function getArrayByRange(min, max, step = 1) {
+//   // if (min > max) {
+//   //   const buffer = min;
+//   //   min = max;
+//   //   max = buffer;
+//   // }
+//   const arr = [];
+//   for (let i = min; i <= max; i += step) {
+//     arr.push(i);
+//   }
+//   return arr;
 // }
-// MyArray.prototype = MyArrayPrototype;
+// console.log(getArrayByRange(3, 18, 5, false));
+// console.log(getArrayByRange(33, 10, 7, false));
 
-// const myArrayNumbers = new MyArray();
-// const myArrayNumbers2 = new MyArray();
-// myArrayNumbers.push(777);
-// console.log(myArrayNumbers);
-// console.log(myArrayNumbers.push === myArrayNumbers.push);
+// const users = [
+//   { name: "Brad", age: 59 },
+//   { name: "Tom", age: 44 },
+//   { name: "Alex", age: 35 },
+//   { name: "Rob", age: 22 },
+//   { name: "Bob", age: 36 },
+// ]
 
-// const arrayNumbers = [];
-// const arrayNumbers2 = new Array();
-// arrayNumbers.push(555);
-// console.log(arrayNumbers);
-// console.log(arrayNumbers.push === arrayNumbers2.push)
+// const userName = users.find(function(user){
+// return user.age<30;
+// }).name;
+// console.log(userName)
+
+// const validateUsers = users
+
+// function checkAge(currentElement){
+// return currentElement.age < 30
+// }
+
+// let arr = ["I", "study", "JavaScript", "right", "now"];
+
+// arr.splice(0, 3, "Let's", "Dance");
+// console.log(arr);
+
+// let arr = ["I", "study", "JavaScript", "right", "now"];
+// let removed = arr.splice(0, 2);
+// console.log(removed);
+
+// let arr1 = ["I", "study", "JavaScript"];
+// arr1.splice(2, 0, "complex", "language");
+// console.log(arr1);
+
+// let arr = [1, 2];
+
+// console.log(arr.concat([3, 4]));
+// console.log(arr.concat([3, 4], [5, 6]));
+// console.log(arr.concat([3, 4], 5, 6));
+// console.log(arr.length);
+
+// let arr = [1, 2, 3, 4, 5];
+
+// let result = arr.reduce((sum, current) => sum + current, 0);
+// console.log(result);
+
+// function filterRange(arr, a, b) {
+//   return arr.filter((item) => a <= item && item <= b);
+// }
+
+// const arr = [5, 3, 8, 1];
+
+// console.log
