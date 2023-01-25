@@ -237,9 +237,9 @@ console.log(getSum(arr));
 //   if (userInput (confirm))
 // }
 
-const askUser = (quetion) => (confirm(quetion) ? "ok" : "error");
+// const askUser = (quetion) => (confirm(quetion) ? "ok" : "error");
 
-console.log(askUser());
+// console.log(askUser());
 
 // ДОМАЩНЯ
 
@@ -378,28 +378,85 @@ console.log(toJadenCase(str));
 // якщо число (аргумент) менше 1 - повертаємо лише одну пару круглих дужок
 // обробляємо помилки!
 // виклик робимо в try/catch
-// pairBrickets(4) => '(((())))'
-// pairBrickets(-4) => '()'
-// pairBrickets('qwe') => throw
+// pairBrackets(4) => '(((())))'
+// pairBrackets(-4) => '()'
+// pairBrackets('qwe') => throw
 
-function pairBrickets(num, arg) {
-  try {
-    pairBrickets = arg.length;
-    console.log(pairBrickets);
-  } catch {
-    console.log;
-  } finally {
-    console.log;
+/**
+ *
+ * @param {number} number
+ * @returns {string}
+ */
+const pairBrackets = (number) => {
+  if (typeof number !== "number") {
+    throw new TypeError("must be a number");
   }
+  if (number <= 1) {
+    return "()";
+  }
+  return "(" + pairBrackets(number - 1) + ")";
+};
+
+try {
+  console.log(pairBrackets(3));
+} catch (error) {
+  console.log(error);
 }
 
-// написати функцію, яка приймає рядок і повертає кількість голосних в рядку
-// регістр не враховувати (рахувати і великі і маленькі голосні)
-// працюємо тільки з латинецею
-// const vowels = ['a', 'e', 'i', 'u', 'o', 'y'];
+// написати рекурсивну функцію, яка приймає два числа і повертає найбільший спільний дільник цих двох чисел
+// // getDivider(24, 15) -> 3
+// // getDivider(3, 3) -> 3
+// // getDivider(7, 3) -> 1
 
-// спробувати оптимізувати функцію до одного ретурну (можна функцію-стрілку без ретурну взагалі)
+// Алгоритм Евкліда дозволяє знайти НСД двох натуральних чисел.
+// Суть алгоритму Евкліда – два числа порівнюють і від більшого віднімають менше до тих пір, поки числа не стануть рівними. Число, якому вони стануть рівними, і є їх найбільший спільний дільник.
 
-const vowels = ["a", "e", "i", "u", "o", "y"];
+/**
+ *
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */
+const getDivider = (a, b) => {
+  if (typeof a !== "number" && typeof b !== "number") {
+    throw new TypeError("must be a number");
+  }
+  if (a <= 0 && b <= 0) {
+    throw new RangeError("numbers must be greater than zero");
+  }
+  return b ? getDivider(b, a % b) : a;
+};
 
-const amountSymbols = (str, symbol = vowels) => {};
+try {
+  console.log(getDivider(24, 15));
+} catch (error) {
+  console.log(error);
+}
+
+// console.log(getDivider(3, 3));
+// console.log(getDivider(7, 3));
+
+// function getDivider(a, b) {
+//   while (b) {
+//     var t = b, // [a, b] = [b, a % b]
+//       b = a % b,
+//       a = t;
+//   }
+//   return a;
+// }
+
+// var gcd = function getDivider(a, b) {
+//   return b ? gcd(b, a % b) : a;
+// }
+
+// console.log(getDivider(24, 15))
+// console.log(getDivider(3, 3))
+// console.log(getDivider(7, 3))
+
+// function getDivider(a, b) {
+//   return b ? getDivider(b, a % b) : a;
+// }
+
+// console.log(getDivider(24, 15));
+// console.log(getDivider(3, 3));
+// console.log(getDivider(7, 3));
