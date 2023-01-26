@@ -1,15 +1,15 @@
 "use strict";
 
-function User(firstName, lastName, age) {
+function UserOld(firstName, lastName, age) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.age = age;
-  User.amount++;
+  UserOld.amount++;
 }
-
-User.amount = 0;
-User.createTestUser = function () {
-  return new User("Test", "Testtest", 18);
+//static
+UserOld.amount = 0;
+UserOld.createTestUser = function () {
+  return new UserOld("Test", "Testtest", 18);
 };
 
 function UserProto() {
@@ -17,7 +17,8 @@ function UserProto() {
     return `${this.firstName} ${this.lastName}`;
   };
 }
+this.toString = function () {
+  return this.firstName;
+};
 
-User.prototype = new UserProto();
-
-const user = new User("Brad", "Pitt", 59);
+UserOld.prototype = new UserProto();
