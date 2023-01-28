@@ -920,67 +920,67 @@
 // addWater(value) //налий води
 // makeTea(value)  //відлий воду
 // turnOn()  //кип'яти
-/**
- *
- * @param {string} brand
- * @param {value} maxVolume
- * @param {value} minVolume
- */
-function Cattle(brand, maxVolume, minVolume) {
-  this.brand = brand;
-  this.maxVolume = maxVolume;
-  this.minVolume = minVolume;
-  this.currentVolume = 0;
-  this.isOn = false;
+// /**
+//  *
+//  * @param {string} brand
+//  * @param {value} maxVolume
+//  * @param {value} minVolume
+//  */
+// function Cattle(brand, maxVolume, minVolume) {
+//   this.brand = brand;
+//   this.maxVolume = maxVolume;
+//   this.minVolume = minVolume;
+//   this.currentVolume = 0;
+//   this.isOn = false;
 
-  //   this.addWater = function (value) {
-  //     if (this.currentVolume + value >= maxVolume) {
-  //       this.currentVolume = maxVolume;
-  //     } else {
-  //       this.currentVolume += value;
-  //     }
-  //     return this.currentVolume;
-  //   };
-  this.addWater = function (value) {
-    if (value <= 0) {
-      return false;
-    }
+//   this.addWater = function (value) {
+//     if (value <= 0) {
+//       return false;
+//     }
 
-    this.currentVolume += value;
-    if (this.currentVolume >= this.maxVolume) {
-      return (this.currentVolume = this.maxVolume);
-    }
-    return this.currentVolume;
-  };
-  this.makeTea = function (value) {
-    if (this.currentVolume <= 0) {
-      this.currentVolume = 0;
-    }
-    return this.currentVolume;
-  };
-}
+//     this.currentVolume += value;
+//     if (this.currentVolume >= this.maxVolume) {
+//       return (this.currentVolume = this.maxVolume);
+//     }
+//     return this.currentVolume;
+//   };
 
-this.turnOn = function () {
-  if (
-    this.currentVolume > this.minVolume ||
-    this.currentVolume < this.maxVolume
-  ) {
-    return (this.isOn = true);
-  }
-  return (this.isOn = false);
-};
+//   this.makeTea = function (value) {
+//     if (value <= 0) {
+//       return false;
+//     }
+//     this.currentVolume -= value;
+//     if (this.currentVolume < 0) {
+//       return (this.currentVolume = 0);
+//     }
+//     return this.currentVolume;
+//   };
 
-const appliance = new Cattle("bosch", 2000, 500);
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.makeTea(100));
-console.log(appliance.makeTea(100));
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.addWater(100));
-console.log(appliance.turnOn());
+//   this.turnOn = function () {
+//     if (
+//       this.currentVolume > maxVolume ||
+//       this.currentVolume < minVolume ||
+//       this.isOn === true
+//     ) {
+//       return (this.isOn = false);
+//     }
+//     return (this.isOn = true);
+//   };
+// }
+
+// const appliance = new Cattle("bosch", 2000, 500);
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.makeTea(100));
+// console.log(appliance.makeTea(100));
+// console.log(appliance.makeTea(100));
+// console.log(appliance.makeTea(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.addWater(100));
+// console.log(appliance.turnOn());
 
 // *********
 // this.turnOn = function (value = 0) {
@@ -1304,29 +1304,55 @@ console.log(appliance.turnOn());
 // //  * @param {number} quantity
 // //  */
 
-// function ProductPrototype() {
-//   this.showInfo = function () {
-//     return;
-//   };
-//   this.setSaleToPrice = function (value = 0) {};
-//   this.buyAmountProduct = function (amountValue) {
-//     if (amountValue <= 0) {
-//       return false;
-//     }
-//     if (amountValue <= this.quantity) {
-//       return amountValue;
-//     }
-//     return null;
-//   };
-// }
-
 // function Product(name, price, quantity) {
 //   this.name = name;
 //   this.price = price;
 //   this.quantity = quantity;
 // }
 
+// function ProductPrototype() {
+//   this.showInfo = function () {
+//     return (
+//       "Product name: " +
+//       this.name +
+//       "" +
+//       ", price: " +
+//       this.price +
+//       "" +
+//       ", quantity in stock - " +
+//       this.quantity
+//     );
+//   };
+
+//   this.setSaleToPrice = function (discount = 0) {
+//     let discountPercent = discount / 100;
+//     if (Number.isNaN(Number(this.price))) {
+//       return "error";
+//     } else {
+//       let NewPrice = Number(this.price - this.price * discountPercent);
+//       this.price = NewPrice;
+//     }
+//     return this.price;
+//   };
+// }
+
+// this.buyAmountProduct = function (amountValue) {
+//   if (this.productQuantity <= amountValue) {
+//     return null;
+//   }
+// };
+
 // Product.prototype = new ProductPrototype();
+
+// const product1 = new Product("milk", 5, 46);
+// const product2 = new Product("butter", 8, 29);
+
+// console.log(product1.showInfo());
+// console.log(product2.showInfo());
+// console.log(product1.setSaleToPrice(6));
+// console.log(product2.setSaleToPrice(0));
+// console.log(product1.buyAmountProduct(5));
+// console.log(product2.buyAmountProduct(2));
 
 // // console.log(showInfo)
 
@@ -1506,3 +1532,268 @@ console.log(appliance.turnOn());
 // const arr = [5, 3, 8, 1];
 
 // console.log
+
+// /**
+//  *
+//  * @param {number} userInputNumber
+//  * @returns {boolean|string}
+//  */
+
+// function checkUserValue(userInputNumber) {
+//   if (
+//     userInputNumber >= 15 &&
+//     userInputNumber <= 35 &&
+//     userInputNumber % 6 === 0
+//   ) {
+//     return true;
+//   }
+// }
+
+// const MAX_TRY = 3;
+// let i = 0;
+// while (i < MAX_TRY) {
+// const userInputNumber = prompt("Enter number");
+// }
+// if (
+// userInputNumber >= 15 &&
+// userInputNumber <= 30 &&
+// userInputNumber % 6 === 0
+// ) {
+// return true;
+// }
+// return false;
+
+// for (let i = 0; i < MAX_TRY; i++) {
+// const userAnswer = prompt("Enter number");
+// if (correctNumber(userAnswer)) {
+//   return console.log("congratulations, you entered the correct number");
+// }
+// console.log("try again");
+// }
+
+// while/for
+
+// Запитувати у користувача число до тих пір, доки воно не буде більше 15 і менше 35 і кратне 6 (18,24,30 підходить)
+// В користувача є 3 спроби
+// зробити двома способами через while і for
+// * це повинна бути функція(можливо і не одна)
+
+/**
+ *
+ * @param {number} userInputNumber
+ * @returns {boolean|string}
+ */
+
+function checkUserValue(userInputNumber) {
+  if (
+    userInputNumber >= 15 &&
+    userInputNumber <= 35 &&
+    userInputNumber % 6 === 0
+  ) {
+    return true;
+  }
+}
+
+// while
+const MAX_TRY = 3;
+let i = 0;
+while (i < MAX_TRY) {
+  i++;
+  const userInputNumber = prompt("Enter number");
+  if (checkUserValue(userInputNumber) === true) {
+    break;
+  }
+}
+
+// for
+for (let i = 0; i < MAX_TRY; i++) {
+  const userInputNumber = prompt("Enter number");
+  if (checkUserValue(userInputNumber) === true) {
+    break;
+  }
+}
+
+// {
+//   console.log("congratulations, you entered the correct number");
+// }
+// console.log("try again");
+
+// /**
+//  *
+//  * @param {number} userInput
+//  * @returns {boolean}
+//  */
+// function askUser(userInput) {
+//   if (userInput >= 15 && userInput <= 30 && userInput % 6 === 0) {
+//     return true;
+//   }
+// }
+
+// // через while
+// let i = 0;
+// while (i < 3) {
+//   i++;
+//   const userInput = prompt("Enter value");
+//   if (askUser(userInput) === true) {
+//     break;
+//   }
+// }
+// // через for
+// for (let i = 0; i < 3; i++) {
+//   const userInput = prompt("Enter value");
+//   if (askUser(userInput) === true) {
+//     break;
+//   }
+// }
+
+// function isNumberCorrectWhile() {
+//   const attempts = 3;
+//   let iterator = 0;
+//   while (iterator < attempts) {
+//     iterator++;
+//     const randomNumber = prompt("Enter number");
+//     const correctNumber = Number(randomNumber);
+//     if (correctNumber >= 15 && correctNumber <= 35 && correctNumber % 6 === 0) {
+//       return true;
+//     }
+//     if (
+//       randomNumber === "" ||
+//       randomNumber === null ||
+//       Number.isNaN(correctNumber)
+//     ) {
+//       return false;
+//     }
+//     if (iterator === attempts) {
+//       return false;
+//     }
+//   }
+// }
+
+// function isNumberCorrectFor() {
+//   const attempts = 3;
+//   for (let i = 0; i < attempts; i++) {
+//     const randomNumber = prompt("Enter number");
+//     const correctNumber = Number(randomNumber);
+//     if (correctNumber >= 15 && correctNumber <= 35 && correctNumber % 6 === 0) {
+//         return true;
+//       }
+//       if (
+//         randomNumber === "" ||
+//         randomNumber === null ||
+//         Number.isNaN(correctNumber)
+//       ) {
+//         return false;
+//       }
+//       if (i === attempts - 1) {
+//         return false;
+//       }
+//   }
+// }
+
+// // debugger;
+// console.log(isNumberCorrectWhile());
+// console.log(isNumberCorrectFor());
+
+
+
+
+// /**
+//  * 
+//  * @returns {string | null}
+//  */
+// const askUserNumber = function(){
+//   return prompt("Enter number: ");
+// }
+
+// /**
+// * 
+// * @param {number} number 
+// * @returns {boolean}
+// */
+// const chackCondition = function(number) {
+//   return (number < 15 || number > 35 || number % 6 > 0);
+// }
+
+// let COUNT_ATTEMPTS = 3;
+// let iterator = 0
+
+// while(iterator < COUNT_ATTEMPTS) {
+//   const userResponse = askUserNumber();
+//   if (userResponse === '' || 
+//       userResponse === null || 
+//       Number.isNaN(userResponse) || 
+//       chackCondition(Number(userResponse))) {
+//       console.log("Try again!!!");
+//       iterator++;
+//       continue;
+//   }
+//   console.log("Greate!!!");
+//   break;
+// }
+
+// // 1
+
+// for(let i = 0; i < COUNT_ATTEMPTS; i++){
+//   const userResponse = askUserNumber();
+//   if (userResponse === '' || 
+//       userResponse === null || 
+//       Number.isNaN(userResponse) || 
+//       chackCondition(Number(userResponse))) {
+//       console.log("Try again!!!");
+//       iterator--;
+//       continue;
+//   }
+//   console.log("Greate!!!");
+//   break;
+// }
+
+
+/**
+ * 
+ * @returns {string | null}
+ */
+const askUserNumber = function(){
+  return prompt("Enter number: ");
+}
+
+/**
+* 
+* @param {number} number 
+* @returns {boolean}
+*/
+const chackCondition = function(number) {
+  return (number < 15 || number > 35 || number % 6 > 0);
+}
+
+let COUNT_ATTEMPTS = 3;
+let iterator = 0
+
+while(iterator < COUNT_ATTEMPTS) {
+  const userResponse = askUserNumber();
+  if (userResponse === '' || 
+      userResponse === null || 
+      Number.isNaN(userResponse) || 
+      chackCondition(Number(userResponse))) {
+      console.log("Try again!!!");
+      iterator++;
+      continue;
+  }
+  console.log("Greate!!!");
+  break;
+}
+
+// 1
+
+for(let i = 0; i < COUNT_ATTEMPTS; i++){
+  const userResponse = askUserNumber();
+  if (userResponse === '' || 
+      userResponse === null || 
+      Number.isNaN(userResponse) || 
+      chackCondition(Number(userResponse))) {
+      console.log("Try again!!!");
+      iterator--;
+      continue;
+  }
+  console.log("Greate!!!");
+  break;
+}
